@@ -11,14 +11,14 @@ db.createCollection("clientes", {
             },
             nombre: {
                bsonType: "string",
-               description: "Nombre del usuario, debe ser tipo string" 
+               description: "Nombre del usuario, debe ser tipo string"
             },
             telefono: {
-               bsonType: "string",
+               bsonType: "int",
                description: "debe ser tipo string"
             },
             documento: {
-               bsonType: "string",
+               bsonType: "int",
                description: "debe ser tipo string"
             },
             email: {
