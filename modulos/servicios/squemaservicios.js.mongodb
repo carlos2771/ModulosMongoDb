@@ -1,0 +1,29 @@
+use("psbarber")
+
+db.createCollection("servicios",{
+    validator:{
+        $jsonSchema:{
+            bsonType: "object",
+            required: ["id_servicio","precio","nombre","estado"],
+            properties:{
+                id_servicio:{
+                    bsonType: "int",
+                    description: "solo enteros"
+                },
+                precio:{
+                    bsonType: "int",
+                    description: "solo enteros"
+                },
+                nombre:{
+                    bsonType: "string",
+                    description: "el nombre debe ser tipo string"
+                },
+                estado:{
+                    bsonType: "bool",
+                    description: "el estado debe ser booleano"
+                }
+            }
+        }
+    }
+})
+

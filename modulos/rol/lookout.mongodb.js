@@ -3,9 +3,9 @@ db.usuarios.aggregate([
   {
     $lookup: {
       from: "roles",
-      localField: "'_id'",
-      foreignField: "'id_roles'",
-      as: "llave foranea de usuario a rol"
+      localField: "'_id'", //_id de usuarios
+      foreignField: "'id_roles'",  // los 2 id tienen que cohincidir
+      as: "usuariosRoles" //alias
     }
   }
 ])
