@@ -1,0 +1,29 @@
+use("psbarber")
+
+db.createCollection("ventas",{
+    validator:{
+        $jsonSchema:{
+            bsonType: "object",
+            required: ["id_venta","fecha","total","estado"],
+            properties:{
+                id_venta:{
+                    bsonType: "int",
+                    description: "solo enteros"
+                },
+                fecha:{
+                    bsonType: "string",
+                    description: "Es una fecha"
+                },
+                total:{
+                    bsonType: "int",
+                    description: "solo enteros"
+                },
+                estado:{
+                    bsonType: "bool",
+                    description: "el estado debe ser booleano"
+                }
+            }
+        }
+    }
+})
+

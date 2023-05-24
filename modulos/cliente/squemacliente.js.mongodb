@@ -1,0 +1,36 @@
+use("psbarber")
+db.createCollection("clientes", {
+   validator: {
+      $jsonSchema: {
+         bsonType: "object",
+         required: ["id_cliente","nombre", "telefono", "documento","email","estado"],
+         properties: {
+            id_cliente: {
+               bsonType: "int",
+               description: "solo enteros"
+            },
+            nombre: {
+               bsonType: "string",
+               description: "Nombre del usuario, debe ser tipo string"
+            },
+            telefono: {
+               bsonType: "string",
+               description: "debe ser tipo string"
+            },
+            documento: {
+               bsonType: "string",
+               description: "debe ser tipo string"
+            },
+            email: {
+               bsonType: "string",
+               pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+               description: "Correo tipo string, con formato de correo@mail.com"
+            },
+            estado: {
+               bsonType: "bool",
+               description: "Estado tipo booleano de la empresa"
+            }
+         }
+      }
+   }
+})
